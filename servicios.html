@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servicios - Elite Motor</title>
+  <style>
+    /* Reset y base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%);
+      padding-top: 80px;
+      color: #333;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    header:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      height: 45px;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+    .logo-container img:hover {
+      transform: rotate(-5deg) scale(1.1);
+    }
+    .brand-text {
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    .black-text { color: #222; }
+    .red-text { color: #d32f2f; }
+
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      color: #444;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #d32f2f;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #d32f2f;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sección superior con imagen y texto */
+    .top-image-row {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 50px 10%;
+      gap: 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 40px auto 60px;
+    }
+    .top-image-row .text-block {
+      max-width: 60%;
+    }
+    .top-image-row h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #222;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    .top-image-row p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      font-weight: 400;
+    }
+    .top-image-row img {
+      max-width: 35%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(211,47,47,0.2);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+    .top-image-row img:hover {
+      transform: scale(1.05) rotate(1deg);
+    }
+
+    /* Sección de servicios */
+    .services-section {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      background-color: #fff;
+      padding: 60px 10%;
+      display: flex;
+      gap: 5%;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .services-image-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .services-image-left img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+      object-fit: contain;
+    }
+    .services-image-left img:hover {
+      transform: scale(1.08);
+    }
+    .services-grid-right {
+      flex: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background-color: #fafafa;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(211,47,47,0.3);
+    }
+    .service-card h3 {
+      margin-bottom: 18px;
+      color: #d32f2f;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+    .service-card p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .top-image-row {
+        flex-direction: column;
+        padding: 30px 5%;
+      }
+      .top-image-row .text-block, .top-image-row img {
+        max-width: 100%;
+      }
+      .services-section {
+        flex-direction: column;
+        padding: 40px 5%;
+      }
+      .services-image-left {
+        margin-bottom: 40px;
+      }
+      .services-grid-right {
+        grid-template-columns: 1fr;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación actualizada -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" />
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="casa.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coches ocacion.html">Vehículos de ocasión</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Texto principal con imagen a la derecha -->
+  <section class="top-image-row">
+    <div class="text-block">
+      <h2>Garantías y servicio</h2>
+      <p>En EliteMotor, tu satisfacción es nuestra misión principal. Te ofrecemos una atención cercana y especializada para ayudarte a encontrar el vehículo perfecto. Nuestros expertos te acompañarán en cada paso del proceso de compra con asesoramiento honesto y profesional. Te garantizamos una experiencia segura, confiable y con el respaldo que mereces.</p>
+    </div>
+    <img src="motor.png" alt="Servicio de calidad" />
+  </section>
+
+  <!-- Imagen a la izquierda y los servicios a la derecha -->
+  <section class="services-section">
+    <div class="services-image-left">
+      <img src="logo22.jpeg" alt="Logo Elite Motors" />
+    </div>
+    <div class="services-grid-right">
+      <div class="service-card">
+        <h3>Reparación de vehículos</h3>
+        <p>Contamos con un taller especializado donde realizamos todo tipo de reparaciones mecánicas y de carrocería. Nuestro equipo técnico utiliza herramientas modernas y repuestos originales para garantizar la máxima calidad y seguridad en cada intervención.</p>
+      </div>
+      <div class="service-card">
+        <h3>Compra de coches</h3>
+        <p>Compramos tu coche al mejor precio del mercado, de forma rápida y sin complicaciones. Valoramos de forma justa cada vehículo, considerando su estado y características. Ofrecemos pago inmediato y gestión integral de los trámites.</p>
+      </div>
+      <div class="service-card">
+        <h3>Venta de coches</h3>
+        <p>Te ofrecemos una amplia gama de vehículos de ocasión revisados y con garantía. Nuestro stock incluye coches de todas las marcas y modelos, con opciones para todos los presupuestos. Ven a conocernos y encuentra el coche ideal para ti.</p>
+      </div>
+      <div class="service-card">
+        <h3>Financiación a medida</h3>
+        <p>Disponemos de planes de financiación personalizados para que puedas pagar tu coche en cómodos plazos. Nos adaptamos a tus necesidades económicas, ofreciéndote condiciones transparentes y competitivas sin sorpresas.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

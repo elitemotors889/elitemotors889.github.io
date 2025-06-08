@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | Elite Auto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      padding-top: 80px;
+      background: url('coches deportivos.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .black-text {
+      color: black;
+    }
+
+    .red-text {
+      color: red;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .formulario-contacto {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .formulario-contacto h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form div {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: darkred;
+    }
+
+    .info-contacto {
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin-top: 40px;
+    }
+
+    .info-fila {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .info-item {
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+
+    .info-item i {
+      font-size: 30px;
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" height="40">
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="casa.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coches ocacion.html">Vehículos de ocasión</a>
+      
+      
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="formulario-contacto">
+    <h2>Contáctanos</h2>
+    <form>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+      <div>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required />
+      </div>
+      <div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required />
+      </div>
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <div class="info-contacto">
+    <div class="info-fila">
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <h3>Llámanos</h3>
+        <p>+34 604897993</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Escríbenos</h3>
+        <p>elitemotorperformarce@gmail.com</p>
+      </div>
+      
+        <div class="info-item">
+           
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ven a visitarnos</h3>
+                <p>Encuéntranos en la <a href="https://www.google.com/maps?q=Castellón+de+la+Plana" target="_blank">Castellón de la Plana</a></p>
+                
+              </div>
+              
+          
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+  
+

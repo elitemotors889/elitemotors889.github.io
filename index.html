@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elite Auto</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      padding-top: 80px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .brand-text span {
+      display: inline-block;
+    }
+
+    .black-text {
+      color: black;
+    }
+
+    .red-text {
+      color: #d32f2f;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d32f2f;
+    }
+
+    #hero {
+      height: 60vh; /* menos altura para que no deje tanto espacio vacío */
+      background-size: cover;
+      background-position: center;
+      transition: background-image 2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: brightness(0.85);
+    }
+
+    /* Contenedor principal para misión y visión */
+    #info-texto {
+      max-width: 1100px;
+      margin: 30px auto 60px;
+      padding: 40px 30px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    #info-texto h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+      color: #d32f2f;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      border-bottom: 3px solid #d32f2f;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+    }
+
+    /* Contenedor para columnas */
+    .columns {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+
+    .column h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #222;
+      border-left: 5px solid #d32f2f;
+      padding-left: 12px;
+      font-weight: 600;
+    }
+
+    .column p {
+      margin-bottom: 18px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* Para párrafo final de cada sección más destacado */
+    .highlight {
+      font-weight: 600;
+      color: #333;
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+      .column {
+        flex-basis: 100%;
+      }
+      #info-texto {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación actualizado -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" height="40" />
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="casa.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coches ocacion.html">Vehículos de ocasión</a>
+      <a href="contacto.html">contacto</a>
+    </nav>
+  </header>
+
+  <!-- Imagen de entrada con cambio automático -->
+  <section id="hero"></section>
+
+  <!-- Sección misión y visión -->
+  <section id="info-texto">
+    <h2>Nuestra Misión y Visión</h2>
+    <div class="columns">
+      <div class="column">
+        <h3>Nuestra Misión: Excelencia en Cada Servicio</h3>
+        <p><strong>Mantenimiento y Personalización</strong></p>
+        <p>Ofrecemos servicios integrales de mantenimiento, reparación y personalización para vehículos deportivos y superdeportivos, garantizando siempre los más altos estándares de calidad.</p>
+        
+        <p><strong>Tecnología y Calidad Superior</strong></p>
+        <p>Utilizamos tecnología de vanguardia y productos de primera línea para asegurar resultados óptimos y una durabilidad excepcional en cada intervención.</p>
+        
+        <p><strong>Atención Personalizada</strong></p>
+        <p>Brindamos un trato exclusivo y adaptado a las necesidades individuales de cada cliente, construyendo relaciones duraderas basadas en la confianza y la satisfacción.</p>
+
+        <p class="highlight">
+          En Elite Motors Performance, nuestra misión es superar las expectativas de nuestros clientes, proporcionando un servicio impecable que realce el rendimiento y la estética de sus vehículos de lujo. Nos comprometemos a mantener su inversión en las mejores condiciones, utilizando nuestra experiencia y pasión por el motor para ofrecer soluciones a medida.
+        </p>
+      </div>
+
+      <div class="column">
+        <h3>Nuestra Visión: El Futuro del Rendimiento Automotriz</h3>
+        <p><strong>Referencia en Castellón</strong></p>
+        <p>Consolidarnos como el taller líder indiscutible en Castellón para vehículos de alto rendimiento, siendo la primera opción para los entusiastas locales.</p>
+        
+        <p><strong>Reconocimiento Nacional</strong></p>
+        <p>Expandir nuestra reputación a nivel nacional, siendo sinónimo de excelencia e innovación en el mantenimiento y personalización de superdeportivos.</p>
+        
+        <p><strong>Innovación Constante</strong></p>
+        <p>Mantenernos a la vanguardia de la tecnología y las técnicas del sector, ofreciendo siempre las soluciones más avanzadas y eficientes.</p>
+        
+        <p><strong>Pasión por el Motor</strong></p>
+        <p>Impulsar nuestra excelencia a través de la profunda pasión que sentimos por los vehículos de alto rendimiento, transmitiéndola en cada trabajo realizado.</p>
+
+        <p class="highlight">
+          Visualizamos un futuro donde Elite Motors Performance sea el referente de la calidad y el rendimiento en el sector automotriz español. Nos esforzamos por ser pioneros en nuevas técnicas y tecnologías, y por construir una comunidad de clientes leales que compartan nuestra devoción por los vehículos de alta gama.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const imagenes = [
+      "coches deportivos.jpg",
+      "upscalemedia-transformed.jpeg",
+      "entrada.png.png",
+    ];
+
+    let index = 0;
+    const hero = document.getElementById("hero");
+
+    function cambiarImagen() {
+      hero.style.backgroundImage = `url('${imagenes[index]}')`;
+      index = (index + 1) % imagenes.length;
+    }
+
+    cambiarImagen();
+    setInterval(cambiarImagen, 120000);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

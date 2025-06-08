@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vende tu coche - Elite Motors</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #f7f7f7, #e0e0e0);
+      padding-top: 100px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .black-text { color: black; }
+    .red-text { color: red; }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: #222;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-back {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    .btn-submit {
+      background-color: red;
+      color: white;
+    }
+
+    .btn-submit:hover {
+      background-color: darkred;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" height="40" />
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coche ocacion.html">Vehículos de ocasión</a>
+      <a href="financiacion.html">Financiación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Formulario principal -->
+  <div class="container">
+    <h1>Pide cita y vende tu coche en el acto</h1>
+    <p>*Todos los campos son obligatorios</p>
+
+    <form>
+      <div class="form-group">
+        <label for="nombre">*Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">*Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" required />
+      </div>
+
+      <div class="form-group">
+        <label for="provincia">*Provincia</label>
+        <input type="text" id="provincia" name="provincia" required />
+      </div>
+
+      <div class="form-group">
+        <label for="prefijo">*Prefijo</label>
+        <select id="prefijo" name="prefijo" required>
+          <option value="+34">ES | +34</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">*Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">*Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="kilometros">*Kilómetros de tu coche</label>
+        <input type="number" id="kilometros" name="kilometros" required />
+      </div>
+
+      <div class="form-group">
+        <label for="centro">*Centro en el que quieres solicitar tu cita</label>
+        <select id="centro" name="centro" required>
+          <option value="castellon" selected>Castellón</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dia">*Día</label>
+        <input type="date" id="dia" name="dia" required />
+      </div>
+
+      <div class="form-group">
+        <label for="hora">*Hora</label>
+        <input type="time" id="hora" name="hora" required />
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-back" onclick="history.back()">Atrás</button>
+        <button type="submit" class="btn btn-submit">Pedir cita</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+

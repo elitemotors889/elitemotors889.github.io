@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehículos de ocasión</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      padding-top: 80px;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .black-text {
+      color: black;
+    }
+
+    .red-text {
+      color: #d32f2f;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d32f2f;
+    }
+
+    .contenedor {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      gap: 30px;
+    }
+
+    .filtros {
+      width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .filtros h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
+    }
+
+    .acordeon {
+      margin-bottom: 15px;
+    }
+
+    .acordeon summary {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 0;
+    }
+
+    .acordeon select,
+    .acordeon input[type="range"] {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .vehiculos {
+      flex-grow: 1;
+    }
+
+    .vehiculos-header {
+      text-align: right;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .tarjeta {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .tarjeta .info {
+      padding: 15px;
+    }
+
+    .tarjeta h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .tarjeta p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .tarjeta a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background-color: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .tarjeta a:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" height="40" />
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="casa.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coches ocacion.html">Vehículos de ocasión</a>
+      <a href="contacto.html">contacto</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="filtros">
+      <h3>Filtrar vehículos</h3>
+
+      <details class="acordeon">
+        <summary>Marca</summary>
+        <select>
+          <option value="BMW">BMW</option>
+          <option value="Mercedes-Benz">Mercedes-Benz</option>
+          <option value="Audi">Audi</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Honda">Honda</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Modelo</summary>
+        <select>
+          <option>Modelo A</option>
+          <option>Modelo B</option>
+          <option>Modelo C</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Motor</summary>
+        <select>
+          <option>Gasolina</option>
+          <option>Diesel</option>
+          <option>Híbrido</option>
+          <option>Eléctrico</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Carrocería</summary>
+        <select>
+          <option>Sedan</option>
+          <option>SUV</option>
+          <option>Hatchback</option>
+          <option>Coupe</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Transmisión</summary>
+        <select>
+          <option>Automática</option>
+          <option>Manual</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Kilometraje máximo</summary>
+        <input type="range" min="0" max="200000" step="10000" value="100000" oninput="this.nextElementSibling.value = this.value + ' km'">
+        <output>100000 km</output>
+      </details>
+
+      <details class="acordeon">
+        <summary>Precio máximo</summary>
+        <select>
+          <option>Hasta 10,000€</option>
+          <option>Hasta 20,000€</option>
+          <option>Hasta 30,000€</option>
+        </select>
+      </details>
+
+      <details class="acordeon">
+        <summary>Año</summary>
+        <select>
+          <option>2023</option>
+          <option>2022</option>
+          <option>2021</option>
+          <option>2020</option>
+          <option>2019</option>
+          <option>2018</option>
+        </select>
+      </details>
+    </div>
+
+    <div class="vehiculos">
+      <div class="vehiculos-header">Nuestros vehículos</div>
+      <div class="grid">
+        <div class="tarjeta" onclick="window.location.href='bmw_x1.html'">
+          <img src="bmw x1.png" alt="BMW X1 (2016)" />
+          <div class="info">
+            <h2>BMW X1 (2016)</h2>
+            <p>Gasolina - Automático</p>
+            <p>90,000 km - €18,999</p>
+            <a href="bmw_x1.html">Ver más</a>
+          </div>
+        </div>
+        <div class="tarjeta" onclick="window.location.href='mercedes_clase_c.html'">
+          <img src="mercedes benz.png" alt="Mercedes-Benz Clase C (2015)" />
+          <div class="info">
+            <h2>Mercedes-Benz Clase C (2015)</h2>
+            <p>Diesel - Automático</p>
+            <p>120,000 km - €21,999</p>
+            <a href="mercedes_clase_c.html">Ver más</a>
+          </div>
+        </div>
+        <div class="tarjeta" onclick="window.location.href='audi-a3.html'">
+          <img src="audi q3.png" alt="Audi A3 (2018)" />
+          <div class="info">
+            <h2>Audi A3 (2018)</h2>
+            <p>Gasolina - Manual</p>
+            <p>75,000 km - €17,500</p>
+            <a href="audi-a3.html">Ver más</a>
+          </div>
+        </div>
+        <!-- Nuevos vehículos añadidos -->
+        <div class="tarjeta" onclick="window.location.href='m4-Competition.html'">
+          <img src="BMW M4 Competition.png" alt="BMW M4 Competition" />
+          <div class="info">
+            <h2>BMW M4 Competition</h2>
+            <p>Gasolina - Manual</p>
+            <p>20,000 km - €85,000</p>
+            <a href="bmw_m4_competition.html">Ver más</a>
+          </div>
+        </div>
+
+        <div class="tarjeta" onclick="window.location.href='mercedes CLS G3 AMG.html'">
+          <img src="El Mercedes CLS G3 AMG.png" alt="Mercedes Clase G AMG" />
+          <div class="info">
+            <h2>Mercedes Clase G AMG</h2>
+            <p>Diesel - Automático</p>
+            <p>30,000 km - €120,000</p>
+            <a href="mercedes_clase_g_amg.html">Ver más</a>
+          </div>
+        </div>
+
+        <div class="tarjeta" onclick="window.location.href='lambo urus.html'">
+          <img src="lambo urus.png" alt="Lamborghini Urus" />
+          <div class="info">
+            <h2>Lamborghini Urus</h2>
+            <p>Gasolina - Automático</p>
+            <p>10,000 km - €180,000</p>
+            <a href="lamborghini_urus.html">Ver más</a>
+          </div>
+        </div>
+
+        <div class="tarjeta" onclick="window.location.href='ferrari Roma 3.9.html'">
+          <img src="Ferrari Roma 3.9 Spider.png" alt="Ferrari Roma 3.9" />
+          <div class="info">
+            <h2>Ferrari Roma 3.9</h2>
+            <p>Gasolina - Automático</p>
+            <p>5,000 km - €200,000</p>
+            <a href="ferrari_roma.html">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

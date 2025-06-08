@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMW X1 (2016)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Copia aquí el CSS completo igual que en la página Audi (o enlaza a un CSS externo para mantenerlo igual) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      padding-top: 80px;
+      background: linear-gradient(135deg, #e9f0f7, #ffffff);
+      color: #333;
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background-color 0.3s ease;
+    }
+    header:hover {
+      background-color: #f8fafc;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-text {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .black-text {
+      color: #222;
+    }
+
+    .red-text {
+      color: #e63946;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 700;
+      font-size: 16px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+    nav a:hover {
+      color: #e63946;
+      border-color: #e63946;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 40px auto 80px auto;
+      background-color: #ffffffdd;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(230, 57, 70, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .contenedor:hover {
+      box-shadow: 0 12px 30px rgba(230, 57, 70, 0.3);
+    }
+
+    .contenedor img {
+      width: 70%;
+      max-width: 520px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 0 auto 30px auto;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease;
+    }
+    .contenedor img:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      font-size: 32px;
+      color: #1d1d1d;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .info {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+      gap: 15px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .info p {
+      margin: 0;
+    }
+
+    .descripcion {
+      margin-top: 35px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .descripcion h2 {
+      margin-top: 30px;
+      margin-bottom: 14px;
+      font-size: 22px;
+      color: #e63946;
+      border-bottom: 2px solid #e63946;
+      padding-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .descripcion ul {
+      margin-left: 22px;
+      list-style-type: disc;
+      color: #555;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #e63946 0%, #d62828 100%);
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 6px 12px rgba(230, 57, 70, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .boton-volver:hover {
+      background: linear-gradient(90deg, #d62828 0%, #b22222 100%);
+      box-shadow: 0 8px 18px rgba(210, 40, 40, 0.8);
+    }
+
+    .info-contacto {
+      padding: 50px 25px;
+      background-color: #fff;
+      margin-top: 60px;
+      border-top: 2px solid #eee;
+      box-shadow: inset 0 5px 15px #fafafa;
+    }
+
+    .info-fila {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .info-item {
+      flex: 1 1 280px;
+      max-width: 320px;
+      background: #f9f9f9;
+      padding: 22px 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(230, 57, 70, 0.12);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .info-item:hover {
+      background: #ffe3e3;
+      box-shadow: 0 8px 22px rgba(230, 57, 70, 0.3);
+    }
+
+    .info-item i {
+      font-size: 34px;
+      color: #e63946;
+      margin-bottom: 14px;
+    }
+
+    .info-item a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .info-item a:hover {
+      color: #e63946;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Elite Auto" height="40" />
+      <div class="brand-text">
+        <span class="black-text">ELITE</span> <span class="red-text">MOTOR</span>
+      </div>
+    </div>
+    <nav>
+      <a href="casa.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="coches ocacion.html">Vehículos de ocasión</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <h1>BMW X1 (2016)</h1>
+    <img src="bmw x1.png" alt="BMW X1" />
+
+    <div class="info">
+      <p><strong>Año:</strong> 2016</p>
+      <p><strong>Kilometraje:</strong> 110.000 km</p>
+      <p><strong>Ubicación:</strong> Madrid</p>
+      <p><strong>Tipo:</strong> SUV</p>
+      <p><strong>Transmisión:</strong> Manual</p>
+      <p><strong>Puertas:</strong> 5</p>
+      <p><strong>Plazas:</strong> 5</p>
+      <p><strong>Cilindrada:</strong> 1995 cc</p>
+      <p><strong>Potencia:</strong> 190 CV</p>
+      <p><strong>Color:</strong> Azul oscuro metalizado</p>
+      <p><strong>Combustible:</strong> Diésel</p>
+      <p><strong>Etiqueta ambiental:</strong> C (verde)</p>
+      <p><strong>Precio:</strong> 19.900 €</p>
+    </div>
+
+    <div class="descripcion">
+      <h2>Comentarios del anunciante</h2>
+      <p>Este BMW X1 azul oscuro cuenta con:</p>
+      <ul>
+        <li>Techo panorámico</li>
+        <li>Asistente de aparcamiento</li>
+        <li>Sistema de navegación profesional</li>
+        <li>Climatizador automático bizona</li>
+        <li>Sensor de lluvia y luces</li>
+      </ul>
+      <p>Mantenimiento oficial BMW y libro de revisiones sellado.</p>
+    </div>
+
+    <a href="coches ocacion.html" class="boton-volver">← Volver atrás</a>
+
+    <section class="info-contacto" aria-label="Información de contacto del concesionario">
+      <h2 style="text-align:center; color:#e63946; margin-bottom: 30px;">Información de Contacto</h2>
+      <div class="info-fila">
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <p>Teléfono: <a href="tel:+34911222333">+34 911 222 333</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <p>Email: <a href="mailto:info@elitemotor.com">elitemotor@gmail.com</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <p>WhatsApp: <a href="https://wa.me/34911222333" target="_blank" rel="noopener noreferrer">Chatea con nosotros</a></p>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <p>Dirección:<br /> Calle Castellón de la Plana<br /> 12001, España</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
+
